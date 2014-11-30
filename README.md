@@ -9,7 +9,7 @@ blablablablablablablab～～～～
 
 blablablablablablablablablablab～～～～
 
-blablablablablablablablablablablablablablablablablablablablabla～～～～ _(:3」∠)_
+blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:3」∠)\_
 
 #### 这么莫名其妙的项目竟然还有LICENSE
 
