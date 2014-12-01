@@ -1,7 +1,7 @@
 /**
  * 从backbone里扣出来的extend模块
  */
-define(['./underscore.js'], function(_) {
+define(['./underscore.js'], function() {
 	'use strict';
 
 	var extend = function(protoProps, staticProps) {

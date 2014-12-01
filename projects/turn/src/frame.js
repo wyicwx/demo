@@ -20,9 +20,8 @@ define(['../helper/extendClass.js'], function(extend) {
 		page.addEventListener('touchstart', touchStart.bind(self));
 		page.addEventListener('touchmove', touchMove.bind(self));
 		page.addEventListener('touchend', touchEnd.bind(self));
+		page.addEventListener('touchcancel', touchEnd.bind(self));
 
-
-		
 		page.addEventListener('mousedown', touchStart.bind(self));
 		page.addEventListener('mousemove', touchMove.bind(self));
 		page.addEventListener('mouseup', touchEnd.bind(self));
@@ -31,77 +30,73 @@ define(['../helper/extendClass.js'], function(extend) {
 	function touchStart(e) {
 		e.preventDefault();
 		var info = this.animateInfo;
-
-		if(info.stoping) return;
+		// 回复状态
+		if(info.homing) return;
 
 		var pageY = e.changedTouches ? e.changedTouches[0].pageY : e.pageY;
 
 		info.start = true;
 		info.startY = info.prevY = pageY;
 		
-		debugger;
-		diff = false;
-		dom = false;
-		next = false;
-		prevY = false;
-		$(this).prev().css('z-index', zIndex++);
-		$(this).next().css('z-index', zIndex++);
+		if(this.debug) {
+			console.log('starY:'+info.startY);
+		}
+
+		var page = this.pages.indexOf(e.target);
+		var prev = this.pages[page-1];
+		var next = this.pages[page+1];
+
+		if(prev) {
+			prev.style.zIndex = ++info.zIndex;
+		}
+		if(next) {
+			next.style.zIndex = ++info.zIndex;
+		}
 	}
 
 	function touchMove(e) {
 		e.preventDefault();
 		var info = this.animateInfo;
 
-		if(!info.start || info.stoping) return;
+		if(!info.start || info.homing) return;
 
 
 		var edgeY = e.changedTouches ? e.changedTouches[0].pageY : e.pageY;
-		var page = Number($(this).data('page'))+1;
+		var diff = Math.abs(edgeY - info.prevY);
+		var pageDiff = Math.abs(edgeY - info.startY);
+		var page = this.pages.indexOf(e.target);
+		var direction = edgeY > info.startY ? 'down' : 'up';
+		var next = direction == 'down' ? this.pages[page-1] : this.pages[page+1];
+		var curr = e.target;
 
-		dom = $(this);
+		info.prevY = edgeY;
 
-		diff = Math.abs(edgeY - (prevY || startY));
-		if(diff > wH) return;
-		// true 下, false 上
-		direction = edgeY > startY;
-
-		if(direction) { // 往下
-			if(page <= 1) {
-				dom = null;
-				return;
-			}
-			next = dom.prev();
-			var style = next[0].style;
-		} else {
-			if(page >= totalPage) {
-				dom = null;
-				return;
-			}
-			next = dom.next();
-			var style = next[0].style;
+		if(this.debug) {
+			console.log('direction:', direction);
+			console.log('edgeY:', edgeY);
+			console.log('next:', next);
+			console.log('diff:', diff);
+			console.log('pageDiff:', pageDiff);
 		}
-		var translateZ = 'scale('+(1-0.2*diff/wH)+')';
-		next.removeClass('hide');
-		var moveDiff = diff * 0.6;
-		if(!direction) {
-			dom[0].style[prefixStyle('transform')] = 'translate(0,' + -moveDiff + 'px) ' + translateZ;
-			style[prefixStyle('transform')] = 'translate(0,' + (wH - diff) + 'px) scale(1)';
-		} else {
-			dom[0].style[prefixStyle('transform')] = 'translate(0,' + moveDiff + 'px) ' + translateZ;
-			style[prefixStyle('transform')] = 'translate(0,' + (-wH + diff) + 'px) scale(1)';
-		}
-		prevY = startY;
-	};
+
+		this.model.sliding(curr, next, {
+			direction: direction,
+			diff: diff,
+			pageDiff: pageDiff,
+			edgeY: edgeY
+		});
+	}
 
 	function touchEnd(e) {
 		e.preventDefault();
-
+return;
 		var info = this.animateInfo;
 
-		if(info.stoping) return;
+		info.start = false;
+		if(info.homing) return;
 		if(!dom || !next) return;
 
-		stoping = true;
+		homing = true;
 		next.addClass('animated');
 		dom.addClass('animated');
 		var after;
@@ -154,12 +149,12 @@ define(['../helper/extendClass.js'], function(extend) {
 				after();
 				dom = null;
 				next = null;
-				stoping = false;
+				homing = false;
 			}, 300);
 		});
 	};
 
-	function Frame(el) {
+	function Frame(el, config) {
 		this.element = el;
 		this.elementInfo = {
 			height: el.offsetHeight,
@@ -167,7 +162,7 @@ define(['../helper/extendClass.js'], function(extend) {
 		};
 		this.animateInfo = {
 			// 归位
-			stoping: false,
+			homing: false,
 			// 初始z-index值
 			zIndex: this.pageTemplates.length,
 			// 手指/鼠标触发的初始位置
@@ -177,12 +172,14 @@ define(['../helper/extendClass.js'], function(extend) {
 			// 触摸开始
 			start: false
 		}
-
 		_createPage(this);
+
+		this.initialize(el, config);
 	}
 
 	Frame.prototype = {
-		mode: Model,
+		debug: false,
+		Model: Model,
 		pageTemplates: [
 			'1',
 			'2',
@@ -195,17 +192,53 @@ define(['../helper/extendClass.js'], function(extend) {
 			'9'
 		],
 		pages: [],
+		initialize: function(el, config) {
+			config || (config = {});
+			this.model = config.model || (new this.Model());
+
+			this.model.parentInfo = this.elementInfo;
+		}
 	};
 
 	Frame.extend = extend;
 
-	function Model() {
+	var elementStyle = document.createElement('div').style;
+	function _vendor() {
+		var vendors = ['t', 'webkitT', 'MozT', 'msT', 'OT'],
+			transform,
+			i = 0,
+			l = vendors.length;
 
+		for (; i < l; i++) {
+			transform = vendors[i] + 'ransform';
+			if (transform in elementStyle) return vendors[i].substr(0, vendors[i].length - 1);
+		}
+		return false;
+	};
+
+
+	function Model() {
+		this.initialize();
+	}
+
+	Model.prototype = {
+		sliding: function(curr, next, info) {			
+		},
+		recover: function() {
+		},
+		prefixStyle: function(style) {
+			if (_vendor() === false) return false;
+			if (_vendor() === '') return style;
+			return _vendor() + style.charAt(0).toUpperCase() + style.substr(1);
+		},
+		initialize: function() {}
 	}
 
 	Model.extend = extend;
 
+
 	return {
-		Frame: Frame
+		Frame: Frame,
+		Model: Model
 	}
 });
