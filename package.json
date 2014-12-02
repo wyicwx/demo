@@ -10,6 +10,8 @@
   "license": "MIT",
   "devDependencies": {
     "bone": "0.0.8",
-    "bone-connect": "0.0.19"
+    "bone-connect": "0.0.19",
+    "bone-include": "0.0.1",
+    "bone-less": "0.0.4"
   }
 }

@@ -1,5 +1,6 @@
 define(['../helper/extendClass.js'], function(extend) {
 	function _createPage(self) {
+		self.element.innerHTML = '';
 		self.pageTemplates.forEach(function(html, index) {
 			var page = document.createElement('div');
 
@@ -14,6 +15,7 @@ define(['../helper/extendClass.js'], function(extend) {
 			self.pages.push(page);
 			self.element.appendChild(page);
 		}, self);
+		self.elementInfo.total = self.pages.length;
 	}
 
 	function _bindEvent(self, page) {
@@ -42,7 +44,7 @@ define(['../helper/extendClass.js'], function(extend) {
 			console.log('starY:'+info.startY);
 		}
 
-		var page = this.pages.indexOf(e.target);
+		var page = this.pages.indexOf(e.currentTarget);
 		var prev = this.pages[page-1];
 		var next = this.pages[page+1];
 
@@ -52,6 +54,7 @@ define(['../helper/extendClass.js'], function(extend) {
 		if(next) {
 			next.style.zIndex = ++info.zIndex;
 		}
+		this.model.slideStart();
 	}
 
 	function touchMove(e) {
@@ -60,14 +63,13 @@ define(['../helper/extendClass.js'], function(extend) {
 
 		if(!info.start || info.homing) return;
 
-
 		var edgeY = e.changedTouches ? e.changedTouches[0].pageY : e.pageY;
 		var diff = Math.abs(edgeY - info.prevY);
 		var pageDiff = Math.abs(edgeY - info.startY);
-		var page = this.pages.indexOf(e.target);
+		var page = this.pages.indexOf(e.currentTarget);
 		var direction = edgeY > info.startY ? 'down' : 'up';
 		var next = direction == 'down' ? this.pages[page-1] : this.pages[page+1];
-		var curr = e.target;
+		var curr = e.currentTarget;
 
 		info.prevY = edgeY;
 
@@ -79,78 +81,34 @@ define(['../helper/extendClass.js'], function(extend) {
 			console.log('pageDiff:', pageDiff);
 		}
 
-		this.model.sliding(curr, next, {
+		this.model.curr = curr;
+		this.model.next = next;
+		if(next) {
+			next.style.visibility = 'visible';
+		}
+
+		this.model.sliding({
 			direction: direction,
 			diff: diff,
 			pageDiff: pageDiff,
-			edgeY: edgeY
+			edgeY: edgeY,
+			page: page
 		});
 	}
 
 	function touchEnd(e) {
 		e.preventDefault();
-return;
-		var info = this.animateInfo;
 
+		var info = this.animateInfo;
+		if(this.debug) {
+			console.log('homing:', true);
+		}
 		info.start = false;
 		if(info.homing) return;
-		if(!dom || !next) return;
 
-		homing = true;
-		next.addClass('animated');
-		dom.addClass('animated');
-		var after;
-
-		if(direction) {
-			if((Number(dom.data('page'))+1) <= 1) {
-				var restore = true;
-			}
-		} else {
-			if((Number(dom.data('page'))+1) >= totalPage) {
-				var restore = true;
-			}
-		}
-		if(diff/wH > 0.4 && !restore) { // change
-			if(direction) {
-				next[0].style[prefixStyle('transform')] = 'translate(0, 0px) scale(1)';
-				dom[0].style[prefixStyle('transform')] = 'translate(0, '+wH*0.6+'px) scale(0.8)';
-			} else {
-				next[0].style[prefixStyle('transform')] = 'translate(0, 0px) scale(1)';
-				dom[0].style[prefixStyle('transform')] = 'translate(0, '+ -wH*0.6 +'px) scale(0.8)';
-			}
-			after = function() {
-				dom.addClass('hide');
-				next.addClass('showtime');
-			}
-		} else { // restore
-			if(direction) {
-				dom[0].style[prefixStyle('transform')] = 'translate(0, 0px) scale(1)';
-				if(restore) {
-					next[0].style[prefixStyle('transform')] = 'translate(0, '+ wH +'px) scale(1)';
-				} else {
-					next[0].style[prefixStyle('transform')] = 'translate(0, '+ -wH +'px) scale(1)';
-				}
-			} else {
-				dom[0].style[prefixStyle('transform')] = 'translate(0, 0px) scale(1)';
-				if(restore) {
-					next[0].style[prefixStyle('transform')] = 'translate(0, '+ -wH +'px) scale(1)';
-				} else {
-					next[0].style[prefixStyle('transform')] = 'translate(0, '+ wH +'px) scale(1)';
-				}
-			}
-			after = function() {
-				next.addClass('hide');
-			}
-		}
-		requestAnimationFrame(function() {
-			setTimeout(function() {
-				next.removeClass('animated');
-				dom.removeClass('animated');
-				after();
-				dom = null;
-				next = null;
-				homing = false;
-			}, 300);
+		info.homing = true;
+		this.model.slideend(function() {
+			info.homing = false;
 		});
 	};
 
@@ -222,14 +180,20 @@ return;
 	}
 
 	Model.prototype = {
-		sliding: function(curr, next, info) {			
+		curr: null,
+		next: null,
+		parentInfo: null,
+		sliding: function(info) {			
 		},
-		recover: function() {
+		slideend: function(info) {
 		},
 		prefixStyle: function(style) {
 			if (_vendor() === false) return false;
 			if (_vendor() === '') return style;
 			return _vendor() + style.charAt(0).toUpperCase() + style.substr(1);
+		},
+		transform: function(dom, value) {
+			dom.style[this.prefixStyle('transform')] = value;
 		},
 		initialize: function() {}
 	}

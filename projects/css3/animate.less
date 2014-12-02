@@ -1,0 +1,37 @@
+/* include('./fn.include') */
+
+@-moz-keyframes hue {
+  from {
+    -moz-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -moz-filter: hue-rotate(-360deg);
+  }
+}
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
+.hub {
+	/*-moz-text-fill-color: transparent;*/
+	-moz-animation: hue 60s infinite linear;
+	/*-webkit-text-fill-color: transparent;*/
+	-webkit-animation: hue 60s infinite linear;
+	/*text-fill-color: transparent;*/
+	animation: hue 60s infinite linear;
+}

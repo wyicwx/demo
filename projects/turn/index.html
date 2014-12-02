@@ -6,10 +6,24 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="format-detection" content="telephone=no" />
 		<title>demo</title>
-		<link rel="stylesheet" type="text/css" href="./style.css">
+		<link rel="stylesheet" type="text/css" href="../css/animate.css">
 		<style type="text/css">
 			.frame_page {
 				background: white;
+			}
+			.frame_page .w {
+				height: 100%;
+				width: 100%;
+				text-align: center;
+				background: -webkit-gradient(linear, 0 0, 0 100%, from(#9E4141), to(red));
+			}
+			.frame_page .w:before {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				width: 0;
+				height: 100%;
+				overflow: hidden;
 			}
 			#slider {
 				position: absolute;
@@ -17,12 +31,65 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
+				overflow: hidden;
+			}
+			.text {
+				display: inline-block;
+				margin: 0;
+				vertical-align: middle;
+				font-size: 300px;
+				text-shadow: 0px 0px 20px #908686;
+				color: white;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="slider">
-			
+			<div style="display:none;">
+				<div class="w hub">
+					<p class="text">1</p>
+				</div>
+			</div>
+			<div style="display:none;">
+				<div class="w hub">
+					<p class="text">2</p>
+				</div>
+			</div>
+			<div style="display:none;">
+				<div class="w hub">
+					<p class="text">3</p>
+				</div>
+			</div>
+			<div style="display:none;">
+				<div class="w hub">
+					<p class="text">4</p>
+				</div>
+			</div>
+			<div style="display:none;">
+				<div class="w hub">
+					<p class="text">5</p>
+				</div>
+			</div>
+			<div style="display:none;">
+				<div class="w hub">
+					<p class="text">6</p>
+				</div>
+			</div>
+			<div style="display:none;">
+				<div class="w hub">
+					<p class="text">7</p>
+				</div>
+			</div>
+			<div style="display:none;">
+				<div class="w hub">
+					<p class="text">8</p>
+				</div>
+			</div>
+			<div style="display:none;">
+				<div class="w hub">
+					<p class="text">9</p>
+				</div>
+			</div>
 		</div>
 		<script data-main="./main.js" src="../helper/require.js"></script>
 	</body>
