@@ -31,6 +31,7 @@ require(['./frame.js'], function(frame) {
 			var info = this.info;
 			var restore = false;
 			var wH = this.parentInfo.height;
+			var self = this;
 			if(info.direction == 'down' && info.page <= 0) {
 				restore = true;
 			} else if(info.direction == 'up' && (info.page+1) >= this.parentInfo.total) {
@@ -38,6 +39,12 @@ require(['./frame.js'], function(frame) {
 			} else if(info.pageDiff/wH < 0.4) {
 				restore = true;
 			}
+
+			this.addClass(this.curr, 'animate');
+			if(this.next) {
+				this.addClass(this.next, 'animate');
+			}
+
 
 			if(restore) {
 				this.transform(this.curr, 'translate(0, 0px) scale(1)');
@@ -57,50 +64,16 @@ require(['./frame.js'], function(frame) {
 				}
 			}
 
-			done();
-
-			// if(diff/wH > 0.4 && ) { // change
-			// 	if(direction) {
-			// 		next[0].style[prefixStyle('transform')] = 'translate(0, 0px) scale(1)';
-			// 		dom[0].style[prefixStyle('transform')] = 'translate(0, '+wH*0.6+'px) scale(0.8)';
-			// 	} else {
-			// 		next[0].style[prefixStyle('transform')] = 'translate(0, 0px) scale(1)';
-			// 		dom[0].style[prefixStyle('transform')] = 'translate(0, '+ -wH*0.6 +'px) scale(0.8)';
-			// 	}
-			// 	after = function() {
-			// 		dom.addClass('hide');
-			// 		next.addClass('showtime');
-			// 	}
-			// } else { // restore
-			// 	if(direction) {
-			// 		dom[0].style[prefixStyle('transform')] = 'translate(0, 0px) scale(1)';
-			// 		if(restore) {
-			// 			next[0].style[prefixStyle('transform')] = 'translate(0, '+ wH +'px) scale(1)';
-			// 		} else {
-			// 			next[0].style[prefixStyle('transform')] = 'translate(0, '+ -wH +'px) scale(1)';
-			// 		}
-			// 	} else {
-			// 		dom[0].style[prefixStyle('transform')] = 'translate(0, 0px) scale(1)';
-			// 		if(restore) {
-			// 			next[0].style[prefixStyle('transform')] = 'translate(0, '+ -wH +'px) scale(1)';
-			// 		} else {
-			// 			next[0].style[prefixStyle('transform')] = 'translate(0, '+ wH +'px) scale(1)';
-			// 		}
-			// 	}
-			// 	after = function() {
-			// 		next.addClass('hide');
-			// 	}
-			// }
-			// requestAnimationFrame(function() {
-			// 	setTimeout(function() {
-			// 		next.removeClass('animated');
-			// 		dom.removeClass('animated');
-			// 		after();
-			// 		dom = null;
-			// 		next = null;
-			// 		homing = false;
-			// 	}, 300);
-			// });
+			requestAnimationFrame(function() {
+				setTimeout(function() {
+					self.removeClass(self.curr, 'animate');
+					if(self.next) {
+						self.removeClass(self.next, 'animate');
+					}
+					done();
+				}, 300);
+			});
+			
 		}
 	});
 	var templates = [];

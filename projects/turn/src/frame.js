@@ -195,6 +195,22 @@ define(['../helper/extendClass.js'], function(extend) {
 		transform: function(dom, value) {
 			dom.style[this.prefixStyle('transform')] = value;
 		},
+		addClass: function(dom, c) {
+			var className = dom.className;
+
+			className = className.split(/\s+/);
+			className.push(c);
+			dom.className = className.join(' ');
+		},
+		removeClass: function(dom, c) {
+			var className = dom.className;
+
+			className = className.split(/\s+/);
+			if(~className.indexOf(c)) {
+				className = className.slice(className.indexOf(c)-1, className.indexOf(c));
+			}
+			dom.className = className.join(' ');
+		},
 		initialize: function() {}
 	}
 

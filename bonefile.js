@@ -2,6 +2,7 @@ var bone = require('bone');
 var connect = require('bone-connect');
 var less = require('bone-less');
 var include = require('bone-include');
+var proxy = require('bone-proxy');
 
 
 var dist = bone.dest('dist');
@@ -25,4 +26,5 @@ css.src('~/projects/css3/*.less')
 	});
 
 bone.cli(connect({base: './dist'}));
+bone.cli(proxy());
 
