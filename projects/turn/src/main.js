@@ -50,17 +50,17 @@ require(['./frame.js'], function(frame) {
 				this.transform(this.curr, 'translate(0, 0px) scale(1)');
 				if(this.next) {				
 					if(info.direction == 'down') {
-						this.transform(this.next, 'translate(0, '+ -wH +'px) scale(1)');
+						this.transform(this.next, 'translate(0, '+ -wH +'px) scale(0.8)');
 					} else {
-						this.transform(this.next, 'translate(0, '+ wH +'px) scale(1)');
+						this.transform(this.next, 'translate(0, '+ wH +'px) scale(0.8)');
 					}
 				}
 			} else {
 				this.transform(this.next, 'translate(0, 0px) scale(1)');
 				if(info.direction == 'down') {
-					this.transform(this.curr, 'translate(0, '+ wH +'px) scale(1)');
+					this.transform(this.curr, 'translate(0, '+ wH +'px) scale(0.8)');
 				} else {
-					this.transform(this.curr, 'translate(0, '+ -wH +'px) scale(1)');
+					this.transform(this.curr, 'translate(0, '+ -wH +'px) scale(0.8)');
 				}
 			}
 
