@@ -1,4 +1,4 @@
-require(['./frame.js'], function(frame) {
+require(['./src/frame.js'], function(frame) {
 
 	var Shutter = frame.Model.extend({
 		info: null,
