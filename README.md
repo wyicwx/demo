@@ -11,6 +11,18 @@ blablablablablablablablablablab～～～～
 
 blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:3」∠)\_
 
+#### 开始
+
+```shell
+$ npm install ./
+```
+
+```shell
+$ bone connect
+```
+
+访问 http://localhost:8081/projects
+
 #### 这么莫名其妙的项目竟然还有LICENSE
 
 [MIT](/LICENSE)

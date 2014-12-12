@@ -61,6 +61,9 @@ var include = require('bone-include');
 
 var proxy = require('bone-proxy');
 
-bone.cli(connect({base: './'}));
+bone.cli(connect({
+	base: './',
+	port: 8081
+}));
 bone.cli(proxy());
 

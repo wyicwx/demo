@@ -27,6 +27,7 @@ define(['../common/helper/extendClass.js'], function(extend) {
 		page.addEventListener('mousedown', touchStart.bind(self));
 		page.addEventListener('mousemove', touchMove.bind(self));
 		page.addEventListener('mouseup', touchEnd.bind(self));
+		page.addEventListener('mousecancel', touchEnd.bind(self));
 	}
 
 	function touchStart(e) {
