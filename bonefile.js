@@ -33,11 +33,11 @@ projects.forEach(function(project) {
 
 var connect = require('bone-connect');
 var less = require('bone-less');
-var include = require('bone-include');
+var include = require('bone-act-include');
 
 
 
-// var dist = bone.dest('dist');
+var dist = bone.dest('dist');
 
 // var turn = dist.dest('turn');
 
@@ -57,13 +57,9 @@ var include = require('bone-include');
 // 		return filename.replace(/\.less$/, '.css');
 // 	});
 
-
-
-var proxy = require('bone-proxy');
-
 bone.cli(connect({
 	base: './',
 	port: 8081
 }));
-bone.cli(proxy());
 
+bone.project('dist', '~/projects/**/*');
