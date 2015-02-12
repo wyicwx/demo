@@ -11,8 +11,9 @@ blablablablablablablab～～～～
 
 blablablablablablablablablablab～～～～
 
-blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:3」∠)\_
+blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:3」∠)\_完全不知道在说些什么，好吧介绍不重要！
 
+这个demo里具体有：
 
 * 字体投影 [点我](http://wyicwx.github.io/demo/dist/shadow/)
 
@@ -20,11 +21,11 @@ blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:
 
 * 动态流星雨 [点我](http://wyicwx.github.io/demo/dist/meteor/)
 
-![qrcode](/qrcode/meteor.png =80x80)
+![qrcode](./qrcode/meteor.png =80x80)
 
 * 翻页&&色相旋转的渐变背景 [点我](http://wyicwx.github.io/demo/dist/turn/)
 
-![qrcode](/qrcode/turn.png =80x80)
+![qrcode](./qrcode/turn.png =80x80)
 
 **PS**: 以上效果大部分纯css3和js实现，请用webkit内核的浏览器打开，二维码请用ios设备，不能保证其他设备的兼容性
 
