@@ -1,4 +1,4 @@
-define(['./src/frame.js', './src/module/shutter.js'], function(frame, Shutter) {
+define(['./frame.js', './module/shutter.js'], function(frame, Shutter) {
 
 	var templates = [];
 	var children = document.getElementById('slider').children;
