@@ -369,9 +369,11 @@ body {
 .slidingarea {
 	position: absolute;
 	bottom: 80px;
-	width: 100%;
+	left: 50%;
+	width: 320px;
 	text-align: center;
 	font-size: 20px;
+	margin-left: -160px;
 }
 .char {
 	color: #00415d;
