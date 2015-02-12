@@ -19,7 +19,7 @@ blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:
 
 * ios滑动解锁 [点我](http://wyicwx.github.io/demo/dist/sliding-effect/)
 
-![qrcode](./qrcode/sliding-effect.png);
+![qrcode](./qrcode/sliding-effect.png)
 
 * 动态流星雨 [点我](http://wyicwx.github.io/demo/dist/meteor/)
 
@@ -31,7 +31,7 @@ blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:
 
 **PS**: 以上效果大部分纯css3和js实现，请用webkit内核的浏览器打开，二维码请用ios设备，不能保证其他设备的兼容性
 
-##### 如果要调试的话
+##### 如果要调试的话，请在checkout源码后分别执行下面的代码
 
 ```shell
 $ npm install ./
