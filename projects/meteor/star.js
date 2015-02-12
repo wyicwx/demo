@@ -1,4 +1,4 @@
-define(function() {
+define([], function() {
 	function Star(ctx) {
 		this.ctx = ctx;
 		this.setRandomPosition();

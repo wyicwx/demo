@@ -1,4 +1,6 @@
-define(['../common/helper/extendClass.js', '../common/requestAnimationFrame/requestAnimationFrame.js', './star.js'], function(extend, raf, Star) {
+define(['./extend.js', './star.js'], function(extend, Star) {
+
+	// include('~/common/requestAnimationFrame/requestAnimationFrame.js')
 
 	function Meteor(canvas, config) {
 		this.stars = [];
