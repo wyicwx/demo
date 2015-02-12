@@ -19,6 +19,8 @@ blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:
 
 * ios滑动解锁 [点我](http://wyicwx.github.io/demo/dist/sliding-effect/)
 
+![qrcode](./qrcode/sliding-effect.png);
+
 * 动态流星雨 [点我](http://wyicwx.github.io/demo/dist/meteor/)
 
 ![qrcode](./qrcode/meteor.png)
