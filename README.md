@@ -13,11 +13,18 @@ blablablablablablablablablablab～～～～
 
 blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:3」∠)\_
 
-* 纯css3实现字体投影效果 [点我](http://wyicwx.github.io/demo/dist/shadow/)
-* 
 
+* 字体投影 [点我](/dist/shadow/)
 
-#### 如果你要调试的话
+* ios滑动解锁 [点我](/dist/sliding-effect/)
+
+* 动态流星雨 ![qrcode](/qrcode/meteor.png)
+
+* 翻页&&色相旋转的渐变背景 ![qrcode](/qrcode/turn.png)
+
+**PS**: 以上效果大部分纯css3和js实现，请用webkit内核的浏览器打开，二维码请用ios设备，不能保证其他设备的兼容性
+
+###### 如果要调试的话
 
 ```shell
 $ npm install ./
@@ -26,8 +33,4 @@ $ bone connect
 
 访问 http://localhost:8081/dist
 
-
-* 这么莫名其妙的项目竟然还有 [MIT](/LICENSE) LICENSE
-
-
-
+**LICENSE**: 这么莫名其妙的项目竟然还有 [MIT](/LICENSE) 

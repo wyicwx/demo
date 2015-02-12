@@ -6,47 +6,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="format-detection" content="telephone=no" />
 		<title>demo</title>
-		<link rel="stylesheet" type="text/css" href="./common/css3/animate.css">
-		<style type="text/css">
-			#slider {
-				background: -webkit-gradient(linear, 0 0, 0 100%, from(#9E4141), to(red));
-			}
-			.frame_page {
-			}
-			.frame_page .w {
-				height: 100%;
-				width: 100%;
-				text-align: center;
-			}
-			.frame_page .w:before {
-				content: '';
-				display: inline-block;
-				vertical-align: middle;
-				width: 0;
-				height: 100%;
-				overflow: hidden;
-			}
-			#slider {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				overflow: hidden;
-			}
-			.text {
-				display: inline-block;
-				margin: 0;
-				vertical-align: middle;
-				font-size: 300px;
-				text-shadow: 0px 0px 20px #908686;
-				color: white;
-			}
-			.animate {
-				-webkit-transition: all 300ms linear;
-				transition: all 300ms linear;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="./css.css">
 	</head>
 	<body>
 		<div id="slider" class="hub">
@@ -85,17 +45,8 @@
 					<p class="text">7</p>
 				</div>
 			</div>
-			<div style="display:none;">
-				<div class="w">
-					<p class="text">8</p>
-				</div>
-			</div>
-			<div style="display:none;">
-				<div class="w">
-					<p class="text">9</p>
-				</div>
-			</div>
 		</div>
-		<script data-main="./src/main.js" src="./common/helper/require.js"></script>
+		<script type="text/javascript" src="./underscore.js"></script>
+		<script data-main="./main.js" src="./require.js"></script>
 	</body>
 </html>

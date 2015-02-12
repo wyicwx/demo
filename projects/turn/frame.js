@@ -1,4 +1,7 @@
-define(['../common/helper/extendClass.js'], function(extend) {
+define([], function() {
+
+	// include('~/common/helper/extendClass.js')
+
 	function _createPage(self) {
 		self.element.innerHTML = '';
 		self.pageTemplates.forEach(function(html, index) {

@@ -8,26 +8,14 @@ var include = require('bone-act-include');
 // common
 var common = bone.dest('common');
 common.dest('css3')
-	.src('./animate.less')
+	.src('./fn.less')
 	.act(include)
 	.act(less)
-	.rename('animate.css');
-
-
-
-
-// load project 
-fs.readdirSync('./projects').map(function(v) {
-	var p = path.join(__dirname, 'projects', v, 'bone.js');
-	p = path.normalize(p);
-
-	if(fs.existsSync(p)) {
-		require(p);
-	}
-});
+	.rename('css3.css');
 
 bone.dest('dist')
-	.src('~/projects/**/*');
+	.src('~/projects/**/*')
+	.act(include);
 
 bone.project('dist', '~/dist/**/*');
 
