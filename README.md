@@ -27,9 +27,6 @@ blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:
 
 ![qrcode](./qrcode/turn.png)
 
-<style type="text/css">
-	img {width: 80px;height: 80px;}
-</style>
 **PS**: 以上效果大部分纯css3和js实现，请用webkit内核的浏览器打开，二维码请用ios设备，不能保证其他设备的兼容性
 
 ##### 如果要调试的话
@@ -42,3 +39,5 @@ $ bone connect
 访问 http://localhost:8081/dist
 
 **LICENSE**: 这么莫名其妙的项目竟然还有 [MIT](/LICENSE) 
+
+**Donate**: 如果你觉得这个项目对你有帮助的话，可以点[这里](/Donate.md)
