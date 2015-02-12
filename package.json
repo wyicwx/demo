@@ -9,9 +9,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bone": "0.0.15",
-    "bone-connect": "0.0.23",
-    "bone-less": "0.0.4",
-    "bone-act-include": "0.0.8"
+    "bone": "0.0.16",
+    "bone-act-include": "0.0.8",
+    "bone-connect": "0.0.26",
+    "bone-less": "0.0.4"
   }
 }

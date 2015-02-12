@@ -1,0 +1,41 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background: black;
+	min-height: 800px;
+	min-width: 800px;
+}
+.wall {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+.charwrapper {
+	background: #666;
+	width: 800px;
+	height: 800px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	margin-top: -400px;
+	margin-left: -400px;
+}
+.char {	
+	font-size: 80px;
+	color: #fff;
+	text-shadow: black -20px -20px 15px;
+	line-height: 800px;
+}
+.mask {
+	background: black;
+	-webkit-mask: -webkit-gradient(radial, 420 420, 0, 420 420, 400, from(rgba(255, 255, 255, 0)), to(rgb(255, 255, 255)));
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}

@@ -42,5 +42,6 @@ bone.task('release', function() {
 // cli
 bone.cli(connect({
 	base: './',
-	port: 8081
+	port: 8081,
+	livereload: true
 }));
