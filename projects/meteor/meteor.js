@@ -1,4 +1,4 @@
-define(['./star.js'], function(extend, Star) {
+define(['./star.js'], function(Star) {
 	function Meteor(canvas, config) {
 		this.stars = [];
 		this.ctx = canvas.getContext("2d");
