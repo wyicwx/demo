@@ -1,12 +1,14 @@
 var bone = require('bone');
 var path = require('path');
 var fs = require('fs');
-var connect = require('bone-connect');
-var less = require('bone-less');
+var connect = require('bone-cli-connect');
+var less = require('bone-act-less');
+var layout = require('bone-act-layout');
 var include = require('bone-act-include');
 
 // common
 var common = bone.dest('common');
+
 common.dest('css3')
 	.src('./fn.less')
 	.act(include)

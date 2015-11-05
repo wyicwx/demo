@@ -1,17 +1,15 @@
-# demo
->项目如其名，就是各种demo，作为平时学习的积攒
+这个项目是平时工作生活之余所见所感记录之用
+=
 
-下面是具体介绍
-
-blablablablablablabla～～～(*&^&*&%$%*&%%%*$&*#*)
-
-blablablablablablablablablablablablablabla～～～～(此处应有掌声)
-
-blablablablablablablablaaaaa～～～～
-
-blablablablablablablablablablabbbb～～～～
-
-blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:3」∠)\_完全不知道在说些什么，好吧介绍不重要！
++ 视觉相关
+	1. 按钮状态切换
++ 交互相关
+	1. 输入框异常提示
+	2. 登录框
+	3. 
++ 开发相关
+	1. less函数库
+	2. css通用类global
 
 这个demo里具体有：
 
@@ -31,7 +29,7 @@ blablablablablablablablablablablablablablablablablablablablabla～～～～ \_(:
 
 **PS**: 以上效果大部分纯css3和js实现，请用webkit内核的浏览器打开，二维码请用ios设备，不能保证其他设备的兼容性
 
-##### 如果要调试的话，请在checkout源码后分别执行下面的代码
+##### 如果要调试的话，请在clone源码后分别执行下面的代码
 
 ```shell
 $ npm install ./
