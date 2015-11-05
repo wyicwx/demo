@@ -6,20 +6,28 @@ var less = require('bone-act-less');
 var layout = require('bone-act-layout');
 var include = require('bone-act-include');
 
-// common
-var common = bone.dest('common');
-
-common.dest('css3')
-	.src('./fn.less')
-	.act(include)
-	.act(less)
-	.rename('css3.css');
-
 bone.dest('dist')
 	.src('~/projects/**/*')
-	.act(include);
-
-bone.project('dist', '~/dist/**/*');
+	.act(include)
+	.act(less(null, {
+		filter: function(runtime) {
+			if(path.extname(runtime.source) == '.less') {
+				console.log('source:'+runtime.source);
+				console.log('destination:'+runtime.destination);
+				if(path.extname(runtime.destination) == '.css') {
+					return true;
+				}
+			}
+			return false;
+		}
+	}))
+	.rename(function(fileName, filePath) {
+		if(filePath.indexOf('lessFunction/fn.less') == -1) {
+			return fileName.replace(/\.less$/, '.css');
+		} else {
+			return fileName;
+		}
+	});
 
 bone.task('release', function() {
 	bone.fs.rm('~/dist');
@@ -31,7 +39,6 @@ bone.task('release', function() {
 });
 // cli
 bone.cli(connect({
-	base: './',
-	port: 8081,
+	base: './dist',
 	livereload: true
 }));
