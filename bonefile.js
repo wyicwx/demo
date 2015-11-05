@@ -1,35 +1,37 @@
 var bone = require('bone');
 var path = require('path');
 var fs = require('fs');
-var connect = require('bone-connect');
-var less = require('bone-less');
+var connect = require('bone-cli-connect');
+var less = require('bone-act-less');
+var layout = require('bone-act-layout');
 var include = require('bone-act-include');
-
-// common
-var common = bone.dest('common');
-common.dest('css3')
-	.src('./fn.less')
-	.act(include)
-	.act(less)
-	.rename('css3.css');
 
 bone.dest('dist')
 	.src('~/projects/**/*')
-	.act(include);
+	.act(include)
+	.act(less(null, {
+		filter: function(runtime) {
+			if(path.extname(runtime.source) == '.less') {
+				if(path.extname(runtime.destination) == '.css') {
+					return true;
+				}
+			}
+			return false;
+		}
+	}))
+	.rename(function(fileName, filePath) {
+		if(filePath.indexOf('lessFunction/fn.less') == -1) {
+			return fileName.replace(/\.less$/, '.css');
+		} else {
+			return fileName;
+		}
+	});
 
-bone.project('dist', '~/dist/**/*');
-
-bone.task('release', function() {
-	bone.fs.rm('~/dist');
-},{
-	name: 'build',
-	params: {
-		'project': 'dist'
-	}
+bone.task('release', {
+	name: 'build'
 });
 // cli
 bone.cli(connect({
-	base: './',
-	port: 8081,
+	base: './dist',
 	livereload: true
 }));

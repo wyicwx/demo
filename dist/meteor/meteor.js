@@ -1,3 +1,4 @@
+<<<<<<< HEAD:dist/meteor/meteor.js
 define(['./extend.js', './star.js'], function(extend, Star) {
 
 	var lastTime = 0,
@@ -25,6 +26,9 @@ if (!window.cancelAnimationFrame) {
 	}
 }
 
+=======
+define(['./star.js'], function(Star) {
+>>>>>>> master:dist/meteor/meteor.js
 	function Meteor(canvas, config) {
 		this.stars = [];
 		this.ctx = canvas.getContext("2d");

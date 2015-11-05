@@ -1,6 +1,6 @@
 define([], function() {
 
-	// include('~/common/helper/extendClass.js')
+	// include('../vendor/helper/extendClass.js')
 
 	function _createPage(self) {
 		self.element.innerHTML = '';
