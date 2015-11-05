@@ -1,7 +1,4 @@
-define(['./extend.js', './star.js'], function(extend, Star) {
-
-	// include('~/common/requestAnimationFrame/requestAnimationFrame.js')
-
+define(['./star.js'], function(extend, Star) {
 	function Meteor(canvas, config) {
 		this.stars = [];
 		this.ctx = canvas.getContext("2d");

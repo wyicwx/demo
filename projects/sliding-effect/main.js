@@ -1,5 +1,4 @@
 (function() {
-	// include('~/common/requestAnimationFrame/requestAnimationFrame.js')
 	var mask = document.querySelector('.charbg');
 	var height = mask.offsetHeight;
 	var offset = 0;
