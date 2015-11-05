@@ -27,9 +27,7 @@ bone.dest('dist')
 		}
 	});
 
-bone.task('release', function() {
-	bone.fs.rm('~/dist');
-},{
+bone.task('release', {
 	name: 'build'
 });
 // cli

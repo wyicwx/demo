@@ -1,73 +1,58 @@
+/**
+ * less common function
+ * @author: wyicwx@gmail.com
+ * @github: https://github.com/wyicwx
+ */
 #slider {
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#9E4141), to(red));
-}
-.frame_page {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#9e4141), to(#ff0000));
 }
 .frame_page .w {
-	height: 100%;
-	width: 100%;
-	text-align: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 .frame_page .w:before {
-	content: '';
-	display: inline-block;
-	vertical-align: middle;
-	width: 0;
-	height: 100%;
-	overflow: hidden;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
 }
 #slider {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .text {
-	display: inline-block;
-	margin: 0;
-	vertical-align: middle;
-	font-size: 300px;
-	text-shadow: 0px 0px 20px #908686;
-	color: white;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 300px;
+  text-shadow: 0px 0px 20px #908686;
+  color: white;
 }
 .animate {
-	-webkit-transition: all 300ms linear;
-	transition: all 300ms linear;
-}
-@-moz-keyframes hue {
-  from {
-    -moz-filter: hue-rotate(0deg);
-  }
-
-  to {
-    -moz-filter: hue-rotate(-360deg);
-  }
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
 }
 @-webkit-keyframes hue {
   from {
     -webkit-filter: hue-rotate(0deg);
   }
-
   to {
     -webkit-filter: hue-rotate(-360deg);
   }
 }
-@keyframes hue {
-  from {
-    filter: hue-rotate(0deg);
-  }
-
-  to {
-    filter: hue-rotate(-360deg);
-  }
-}
 .hub {
-	/*-moz-text-fill-color: transparent;*/
-	-moz-animation: hue 6s infinite linear;
-	/*-webkit-text-fill-color: transparent;*/
-	-webkit-animation: hue 6s infinite linear;
-	/*text-fill-color: transparent;*/
-	animation: hue 6s infinite linear;
+  -webkit-animation: hue 6s infinite linear;
+  -moz-animation: hue 6s infinite linear;
+  -ms-animation: hue 6s infinite linear;
+  animation: hue 6s infinite linear;
+  /*-moz-text-fill-color: transparent;*/
+  /*-webkit-text-fill-color: transparent;*/
+  /*text-fill-color: transparent;*/
 }
