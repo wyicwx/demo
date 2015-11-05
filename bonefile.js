@@ -12,8 +12,6 @@ bone.dest('dist')
 	.act(less(null, {
 		filter: function(runtime) {
 			if(path.extname(runtime.source) == '.less') {
-				console.log('source:'+runtime.source);
-				console.log('destination:'+runtime.destination);
 				if(path.extname(runtime.destination) == '.css') {
 					return true;
 				}
@@ -32,10 +30,7 @@ bone.dest('dist')
 bone.task('release', function() {
 	bone.fs.rm('~/dist');
 },{
-	name: 'build',
-	params: {
-		'project': 'dist'
-	}
+	name: 'build'
 });
 // cli
 bone.cli(connect({
