@@ -1,0 +1,46 @@
+/* include("../lessFunction/fn.less") */
+
+.btn {
+	@padding-lr: 15px;
+	@padding-tb: 15px;
+	@background-rgb: ~'10, 170, 245';
+	padding: @padding-tb @padding-lr;
+	font-size: 14px;
+	border-radius: 4px;
+	background: ~'rgb(@{background-rgb})';
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	position: relative;
+	overflow: hidden;
+	&.change {
+		span {
+			.transform(translate(200%, 0));
+		}
+		b {
+			.transform(translate(0, 0));
+		}
+	}
+	span {
+		display: inline-block;
+		.transition(transform 400ms ease);
+	}
+	b {
+		.transform(translate(-200%, 0));
+	}
+	&:before, &:after {
+		position: absolute;
+		content: "";
+		width: @padding-lr;
+		top: @padding-tb;
+		bottom: @padding-tb;
+	}
+	&:before {
+		background: ~'-webkit-gradient(linear,0% 0%, 100% 0%, from(rgba(@{background-rgb}, 1)), to(rgba(@{background-rgb}, 0)))';
+		left: 0;
+	}
+	&:after {
+		background: ~'-webkit-gradient(linear,0% 0%, 100% 0%, from(rgba(@{background-rgb}, 0)), to(rgba(@{background-rgb}, 1)))';
+		right: 0;
+	}
+}
