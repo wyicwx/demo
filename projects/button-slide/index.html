@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		按钮状态切换
+	</title>
+	<link rel="stylesheet" type="text/css" href="../vendor/normalize.css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../commonCss/common.css">
+	<link rel="stylesheet" type="text/css" href="./css.css">
+</head>
+<body>
+	<div class="p40">
+		<div>
+			基础样式:
+			<a href="javascript:void(0)" class="btn" onclick="this.classList.add('actived');">
+				<span>提交</span>
+				<b><img src="../images/loading_bg_aaa.gif"></b>
+			</a>
+		</div><br>
+		<div>
+			不同尺寸:
+			14px
+			<a href="javascript:void(0)" class="btn" onclick="this.classList.add('actived');">
+				<span>提交</span>
+				<b><img src="../images/loading_bg_aaa.gif"></b>
+			</a>
+
+			16px
+			<a href="javascript:void(0)" class="btn btn_m" onclick="this.classList.add('actived');">
+				<span>提交</span>
+				<b><img src="../images/loading_bg_aaa.gif"></b>
+			</a>
+
+			18px
+			<a href="javascript:void(0)" class="btn btn_l" onclick="this.classList.add('actived');">
+				<span>提交</span>
+				<b><img src="../images/loading_bg_aaa.gif"></b>
+			</a>
+
+			20px
+			<a href="javascript:void(0)" class="btn btn_xl" onclick="this.classList.add('actived');">
+				<span>提交</span>
+				<b><img src="../images/loading_bg_aaa.gif"></b>
+			</a>
+		</div><br>
+		<div>
+			不同方向：
+			左到右
+			<a href="javascript:void(0)" class="btn btn_l" onclick="this.classList.add('actived');">
+				<span>　提交　</span>
+				<b>加载中...</b>
+			</a>
+			右到左
+			<a href="javascript:void(0)" class="btn btn_dr btn_l" onclick="this.classList.add('actived');">
+				<span>　提交　</span>
+				<b>加载中...</b>
+			</a>
+			下到上
+			<a href="javascript:void(0)" class="btn btn_du btn_l" onclick="this.classList.add('actived');">
+				<span>　提交　</span>
+				<b>加载中...</b>
+			</a>
+			上到下
+			<a href="javascript:void(0)" class="btn btn_dd btn_l" onclick="this.classList.add('actived');">
+				<span>　提交　</span>
+				<b>加载中...</b>
+			</a>
+		</div><br>
+
+		<div>
+			<a href="javascript:void(0)" style="color: #009AFF;" onclick="resetBtn()">重置样式</a>
+		</div>
+		<script type="text/javascript">
+		function resetBtn() {
+			var btns = document.querySelectorAll('.btn');
+
+			for(var i in btns) {
+				if(btns[i].classList) {
+					btns[i].classList.remove('actived');
+				}
+			}
+		}
+		</script>
+	</div>
+</body>
+</html>
