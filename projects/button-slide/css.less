@@ -1,18 +1,18 @@
 /* include("../lessFunction/fn.less") */
 
 .btn {
-	@padding-lr: 15px;
-	@padding-tb: 10px;
-	@background-rgb: ~'10, 170, 245';
+	@padding_lr: 15px;
+	@padding_tb: 10px;
+	@background_rgb: ~'10, 170, 245';
 	font-size: 14px;
 	border-radius: 4px;
-	background: ~'rgb(@{background-rgb})';
+	background: ~'rgb(@{background_rgb})';
 	display: inline-block;
 	color: white;
 	text-decoration: none;
 	position: relative;
 	overflow: hidden;
-	padding: @padding-tb @padding-lr;
+	padding: @padding_tb @padding_lr;
 	line-height: 1.2;
 	.transition(all 600ms ease);
 	&:active {
@@ -41,7 +41,7 @@
 	b {
 		.opacity(0);
 		.transform(translate(100%, 0));
-		padding: @padding-tb 0;
+		padding: @padding_tb 0;
 		position: absolute;
 		left: 0;
 		top: 0;

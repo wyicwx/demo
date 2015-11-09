@@ -6,7 +6,7 @@ demo
 	2. [动态流星雨](http://wyicwx.github.io/demo/dist/meteor/)
 + 交互相关
 	1. [按钮状态切换](http://wyicwx.github.io/demo/dist/button-slide/)
-	2. 输入框异常提示
+	2. [输入框异常提示](http://wyicwx.github.io/demo/dist/input-error/)
 	3. 登录框label
 + 开发相关
 	1. [less函数库](http://wyicwx.github.io/demo/dist/lessFunction/fn.less)
