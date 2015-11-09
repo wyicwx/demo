@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>输入框异常提示</title>
+	<link rel="stylesheet" type="text/css" href="../vendor/normalize.css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../commonCss/common.css">
+	<link rel="stylesheet" type="text/css" href="./css.css">
+</head>
+<body>
+	<div class="p40">
+		<div>
+			基础样式:&emsp;&emsp;
+				<label class="input" style="width: 400px;">
+					<input type="text" onfocus="this.parentNode.classList.remove('err_empty', 'err_wrong')" onblur="if(!this.value){this.parentNode.classList.add('err_empty')}else{this.parentNode.classList.add('err_wrong')}">
+					<span class="err_tips">请输入正确信息!</span>
+				</label>
+		</div><br>
+		<div>
+			无输入提示:&emsp;<label class="input err_empty" style="width: 400px;">
+				<input type="text" onfocus="this.parentNode.classList.remove('err_empty', 'err_wrong')" onblur="if(!this.value){this.parentNode.classList.add('err_empty')}else{this.parentNode.classList.add('err_wrong')}">
+				<span class="err_tips">请输入正确信息!</span>
+			</label>
+		</div><br>
+		<div>
+			有输入提示:&emsp;<label class="input err_wrong" style="width: 400px;">
+				<input type="text" onfocus="this.parentNode.classList.remove('err_empty', 'err_wrong')" onblur="if(!this.value){this.parentNode.classList.add('err_empty')}else{this.parentNode.classList.add('err_wrong')}" value="wrong input">
+				<span class="err_tips">请输入正确信息!</span>
+			</label>
+		</div>
+	</div>
+</body>
+</html>
