@@ -2,7 +2,7 @@ demo
 =
 
 + 视觉相关
-	1. 按钮状态切换
+	1. [按钮状态切换](http://wyicwx.github.io/demo/dist/button-slide/)
 	2. [ios滑动解锁](http://wyicwx.github.io/demo/dist/sliding-effect/)
 	3. [动态流星雨](http://wyicwx.github.io/demo/dist/meteor/)
 + 交互相关
