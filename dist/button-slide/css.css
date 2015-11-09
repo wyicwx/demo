@@ -1,0 +1,139 @@
+/**
+ * less common function
+ * @author: wyicwx@gmail.com
+ * @github: https://github.com/wyicwx
+ */
+.btn {
+  font-size: 14px;
+  border-radius: 4px;
+  background: rgb(10, 170, 245);
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 15px;
+  line-height: 1.2;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+.btn:active {
+  -webkit-box-shadow: 0 0 5px #0c6c98 inset;
+  -moz-box-shadow: 0 0 5px #0c6c98 inset;
+  -ms-box-shadow: 0 0 5px #0c6c98 inset;
+  box-shadow: 0 0 5px #0c6c98 inset;
+}
+.btn.actived {
+  background: #aaa;
+}
+.btn.actived:active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+.btn.actived span {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: translate(-200%, 0);
+  -moz-transform: translate(-200%, 0);
+  -ms-transform: translate(-200%, 0);
+  transform: translate(-200%, 0);
+}
+.btn.actived b {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.btn span,
+.btn b {
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+.btn span {
+  display: block;
+}
+.btn b {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+  padding: 10px 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+.btn.btn_dr b {
+  -webkit-transform: translate(-100%, 0);
+  -moz-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+}
+.btn.btn_dr.actived b {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.btn.btn_dr.actived span {
+  -webkit-transform: translate(200%, 0);
+  -moz-transform: translate(200%, 0);
+  -ms-transform: translate(200%, 0);
+  transform: translate(200%, 0);
+}
+.btn.btn_du b {
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+.btn.btn_du.actived b {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.btn.btn_du.actived span {
+  -webkit-transform: translate(0, -200%);
+  -moz-transform: translate(0, -200%);
+  -ms-transform: translate(0, -200%);
+  transform: translate(0, -200%);
+}
+.btn.btn_dd b {
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+}
+.btn.btn_dd.actived b {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.btn.btn_dd.actived span {
+  -webkit-transform: translate(0, 200%);
+  -moz-transform: translate(0, 200%);
+  -ms-transform: translate(0, 200%);
+  transform: translate(0, 200%);
+}
+.btn.btn_m {
+  font-size: 16px;
+}
+.btn.btn_l {
+  font-size: 18px;
+}
+.btn.btn_xl {
+  font-size: 20px;
+}

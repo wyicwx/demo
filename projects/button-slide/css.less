@@ -2,9 +2,8 @@
 
 .btn {
 	@padding-lr: 15px;
-	@padding-tb: 15px;
+	@padding-tb: 10px;
 	@background-rgb: ~'10, 170, 245';
-	padding: @padding-tb @padding-lr;
 	font-size: 14px;
 	border-radius: 4px;
 	background: ~'rgb(@{background-rgb})';
@@ -13,34 +12,90 @@
 	text-decoration: none;
 	position: relative;
 	overflow: hidden;
-	&.change {
+	padding: @padding-tb @padding-lr;
+	line-height: 1.2;
+	.transition(all 600ms ease);
+	&:active {
+		.box_shadow(0 0 5px rgb(12, 108, 152) inset);
+	}
+	&.actived {
+		background: #aaa;
+		&:active {
+			.box_shadow(none);
+		}
 		span {
-			.transform(translate(200%, 0));
+			.opacity(0);
+			.transform(translate(-200%, 0));
 		}
 		b {
+			.opacity(1);
 			.transform(translate(0, 0));
 		}
 	}
+	span, b {
+		.transition(all 600ms ease);
+	}
 	span {
-		display: inline-block;
-		.transition(transform 400ms ease);
+		display: block;
 	}
 	b {
-		.transform(translate(-200%, 0));
-	}
-	&:before, &:after {
+		.opacity(0);
+		.transform(translate(100%, 0));
+		padding: @padding-tb 0;
 		position: absolute;
-		content: "";
-		width: @padding-lr;
-		top: @padding-tb;
-		bottom: @padding-tb;
-	}
-	&:before {
-		background: ~'-webkit-gradient(linear,0% 0%, 100% 0%, from(rgba(@{background-rgb}, 1)), to(rgba(@{background-rgb}, 0)))';
 		left: 0;
+		top: 0;
+		width: 100%;
+		text-align: center;
 	}
-	&:after {
-		background: ~'-webkit-gradient(linear,0% 0%, 100% 0%, from(rgba(@{background-rgb}, 0)), to(rgba(@{background-rgb}, 1)))';
-		right: 0;
+	&.btn_dr {
+		b {
+			.transform(translate(-100%, 0));
+		}
+		&.actived {
+			b {
+				.transform(translate(0, 0));
+			}
+			span {
+				.transform(translate(200%, 0));
+			}
+		}
+	}
+	&.btn_du {
+		b {
+			.transform(translate(0, 100%));
+		}
+		&.actived {
+			b {
+				.transform(translate(0, 0));
+			}
+			span {
+				.transform(translate(0, -200%));
+			}
+		}
+	}
+	&.btn_dd {
+		b {
+			.transform(translate(0, -100%));
+		}
+		&.actived {
+			b {
+				.transform(translate(0, 0));
+			}
+			span {
+				.transform(translate(0, 200%));
+			}
+		}
+	}
+
+
+	&.btn_m {
+		font-size: 16px;
+	}
+	&.btn_l {
+		font-size: 18px;
+	}
+	&.btn_xl {
+		font-size: 20px;
 	}
 }
