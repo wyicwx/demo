@@ -1,0 +1,45 @@
+@import "../lessFunction/fn.less";
+
+.input {
+	.display_inline_block;
+    border-bottom: 1px solid gray;
+    position: relative;
+    width: 100%;
+    span {
+    	color: white;
+    }
+	input {
+		display: block;
+		border: none;
+		outline: none;
+		padding: 10px 10px 10px 0px;
+		width: 100%;
+		background: transparent;
+		color: white;
+	}
+	&:before, &:after {
+		content: "";
+		width: 0%;
+		position: absolute;
+		height: 2px;
+		bottom: -1px;
+		background: #22b8eb;
+		.transition(~'width 200ms ease, background 600ms ease');
+	}
+	&:before {
+		left: 50%;
+	}
+	&:after {
+		right: 50%;
+	}
+	&.focused {
+		&:before, &:after {
+			width: 50%;
+		}
+	}
+	&.warning {
+		&:before, &:after {
+			background: orange;
+		}
+	}
+}
