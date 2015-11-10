@@ -8,7 +8,7 @@ demo
 + 交互相关
 	1. [按钮状态切换](http://wyicwx.github.io/demo/dist/button-slide/)
 	2. [输入框异常提示](http://wyicwx.github.io/demo/dist/input-error/)
-	3. 登录框label
+	3. [登录框label](http://wyicwx.github.io/demo/dist/input-login/)
 + 开发相关
 	1. [less函数库](http://wyicwx.github.io/demo/dist/lessFunction/fn.less)
 	2. [css通用类global](http://wyicwx.github.io/demo/dist/commonCss/common.css)

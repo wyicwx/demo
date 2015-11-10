@@ -1,0 +1,38 @@
+@import "../lessFunction/fn.less";
+
+.input {
+	@actived_color: #5188a6;
+	border-radius: 4px;
+	border: 1px solid #dcdcdc;
+	.display_inline_block;
+	position: relative;
+	padding: 10px;
+	cursor: text;
+	width: 100%;
+	.label {
+		position: absolute;
+		font-size: 14px;
+		line-height: 1;
+		top: 50%;
+		margin-top: -7px;
+		margin-left: -5px;
+		.transition(top 300ms ease);
+		background: white;
+		background: -webkit-linear-gradient(to bottom, transparent, white 45%, white 55%, transparent);
+		background: linear-gradient(to bottom, transparent, white 45%, white 55%, transparent);
+		padding: 0 5px;
+		color: #909090;
+	}
+	input {
+		width: 100%;
+		border: none;
+		outline: none;
+	}
+	&.actived {
+		border-color: @actived_color;
+		.label {
+			top: 0px;
+			color: @actived_color;
+		}
+	}
+}
