@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登录框label</title>
+	<link rel="stylesheet" type="text/css" href="../vendor/normalize.css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../commonCss/common.css">
+	<link rel="stylesheet" type="text/css" href="./css.css">
+</head>
+<body>
+	<div class="p40">
+		<div style="width: 400px;margin: auto;margin-top: 100px;">
+			<label class="input">
+				<span class="label">username</span>
+				<input onfocus="onFocus(this)" onblur="onBlur(this)">
+			</label>
+			<br><br>
+			<label class="input">
+				<span class="label">password</span>
+				<input type="password" onfocus="onFocus(this)" onblur="onBlur(this)">
+			</label>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function onFocus(el) {
+			el.parentNode.classList.add('actived');
+		}
+		function onBlur(el) {
+			if(!el.value) {
+				el.parentNode.classList.remove('actived');
+			}
+		}
+	</script>
+</body>
+</html>
