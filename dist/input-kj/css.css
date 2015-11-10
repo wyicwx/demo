@@ -1,0 +1,52 @@
+/**
+ * less common function
+ * @author: wyicwx@gmail.com
+ * @github: https://github.com/wyicwx
+ */
+.input {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  border-bottom: 1px solid gray;
+  position: relative;
+  width: 100%;
+}
+.input span {
+  color: white;
+}
+.input input {
+  display: block;
+  border: none;
+  outline: none;
+  padding: 10px 10px 10px 0px;
+  width: 100%;
+  background: transparent;
+  color: white;
+}
+.input:before,
+.input:after {
+  content: "";
+  width: 0%;
+  position: absolute;
+  height: 2px;
+  bottom: -1px;
+  background: #22b8eb;
+  -webkit-transition: width 200ms ease, background 600ms ease;
+  -moz-transition: width 200ms ease, background 600ms ease;
+  -ms-transition: width 200ms ease, background 600ms ease;
+  transition: width 200ms ease, background 600ms ease;
+}
+.input:before {
+  left: 50%;
+}
+.input:after {
+  right: 50%;
+}
+.input.focused:before,
+.input.focused:after {
+  width: 50%;
+}
+.input.warning:before,
+.input.warning:after {
+  background: orange;
+}
