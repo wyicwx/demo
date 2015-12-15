@@ -1,0 +1,60 @@
+@import "../lessFunction/fn.less";
+
+.ios_checkbox {
+	border-radius: 32px;
+	width: 52px;
+	height: 32px;
+	background: #e5e5e5;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+	position: relative;
+	.transition(all ease 400ms);
+	&:before {
+		content: "";
+		position: absolute;
+		left: 2px;
+		top: 2px;
+		border-radius: 28px;
+		background: white;
+		height: 28px;
+		width: 28px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+		z-index: 1;
+		.transition(all ease 400ms);
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		width: 48px;
+		left: 2px;
+		top: 2px;
+		background: white;
+		border-radius: 28px;
+		height: 28px;
+		.transition(all ease 400ms);
+	}
+	&:checked {
+		background: #4cd964;
+		&:before {
+			left: 52px-30px;
+		}
+		&:after {
+			.transform(scale(0));
+		}
+		&:active {
+			&:before {
+				margin-left: -6px;
+			}
+		}
+	}
+	&:active {
+		&:before {
+			width: 34px;
+		}
+	}
+}
+
+.ios_search_bar {
+	
+}

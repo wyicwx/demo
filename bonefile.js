@@ -30,6 +30,7 @@ bone.dest('dist')
 bone.task('release', {
 	name: 'build'
 });
+bone.cli(require('bone-cli-build')());
 // cli
 bone.cli(connect({
 	base: './dist',
