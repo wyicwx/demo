@@ -16,8 +16,10 @@
   background: #e5e5e5;
   -webkit-appearance: none;
   outline: none;
+  border: none;
   cursor: pointer;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
   -webkit-transition: all ease 400ms;
   -moz-transition: all ease 400ms;
   -ms-transition: all ease 400ms;
