@@ -3,6 +3,12 @@
  * @author: wyicwx@gmail.com
  * @github: https://github.com/wyicwx
  */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .ios_checkbox {
   border-radius: 32px;
   width: 52px;
