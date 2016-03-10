@@ -4,7 +4,8 @@ demo
 + 视觉相关
 	1. [ios滑动解锁](http://wyicwx.github.io/demo/dist/sliding-effect/)
 	2. [动态流星雨](http://wyicwx.github.io/demo/dist/meteor/)
-	3. [科技感输入框](http://wyicwx.github.io/demo/dist/input-kj)
+	3. [科技感输入框](http://wyicwx.github.io/demo/dist/input-kj/)
+    4. [魔方](http://wyicwx.github.io/demo/dist/cube/)
 + 交互相关
 	1. [按钮状态切换](http://wyicwx.github.io/demo/dist/button-slide/)
 	2. [输入框异常提示](http://wyicwx.github.io/demo/dist/input-error/)
