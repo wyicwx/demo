@@ -21,8 +21,6 @@
   position: relative;
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: all ease 400ms;
-  -moz-transition: all ease 400ms;
-  -ms-transition: all ease 400ms;
   transition: all ease 400ms;
 }
 .ios_checkbox:before {
@@ -37,8 +35,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   z-index: 1;
   -webkit-transition: all ease 400ms;
-  -moz-transition: all ease 400ms;
-  -ms-transition: all ease 400ms;
   transition: all ease 400ms;
 }
 .ios_checkbox:after {
@@ -51,8 +47,6 @@
   border-radius: 28px;
   height: 28px;
   -webkit-transition: all ease 400ms;
-  -moz-transition: all ease 400ms;
-  -ms-transition: all ease 400ms;
   transition: all ease 400ms;
 }
 .ios_checkbox:checked {
@@ -63,8 +57,6 @@
 }
 .ios_checkbox:checked:after {
   -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
   transform: scale(0);
 }
 .ios_checkbox:checked:active:before {

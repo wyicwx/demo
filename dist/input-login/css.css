@@ -22,12 +22,11 @@
   margin-top: -7px;
   margin-left: -5px;
   -webkit-transition: top 300ms ease;
-  -moz-transition: top 300ms ease;
-  -ms-transition: top 300ms ease;
   transition: top 300ms ease;
   background: white;
-  background: -webkit-linear-gradient(to bottom, transparent, #ffffff 45%, #ffffff 55%, transparent);
-  background: linear-gradient(to bottom, transparent, #ffffff 45%, #ffffff 55%, transparent);
+  background: -webkit-linear-gradient(to bottom, transparent, white 45%, white 55%, transparent);
+  background: -webkit-linear-gradient(top, transparent, white 45%, white 55%, transparent);
+  background: linear-gradient(to bottom, transparent, white 45%, white 55%, transparent);
   padding: 0 5px;
   color: #909090;
 }

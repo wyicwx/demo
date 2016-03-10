@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>cube</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div class="cube_wrapper">
+        <div class="cube_box">
+            <ul>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+            <ul>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+            <ul>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+            <ul>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+            <ul>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+            <ul>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="./jQuery.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var x = 0;
+        var y = 0;
+        var z = 0;
+        var cube = $('.cube_box');
+        var lock = false;
+        var starX = 0;
+        var starY = 0;
+        var diffX = 0;
+        var diffY = 0;
+        function done() {
+            x = x + diffX;
+            y = y + diffY;
+        }
+        $(document.body).on('mousedown', function(e) {
+            lock = true;
+            starX = e.clientX;
+            starY = e.clientY;
+        });
+        $(document.body).on('mouseout', function(e) {
+            if(!e.relatedTarget) {
+                lock = false;
+                done();
+                return;
+            }
+            if(e.relatedTarget.nodeName == 'HTML' || e.relatedTarget.nodeName == 'BODY') {
+                lock = false;
+                done();
+                return;
+            }
+            if($(e.relatedTarget).hasClass('cube_box')) {
+                lock = false;
+                done();
+                return;
+            }
+        });
+        $(document.body).on('mouseup', function() {
+            lock = false;
+            done();
+        });
+        $(document.body).on('mousemove', function(e) {
+            if(!lock) return;
+
+            diffX = e.clientX - starX;
+            diffY = starY - e.clientY;
+
+            var px = (x + diffX)/2;
+            var py = (y + diffY)/2;
+
+            cube.css('transform', 'rotateY('+px+'deg) rotateX('+py+'deg)');
+        });
+    });
+    </script>
+</body>
+</html>

@@ -55,13 +55,9 @@ body {
   background: red;
   border-radius: 999px;
   display: block;
-  -webkit-box-shadow: 0 0 20px #ffffff;
-  -moz-box-shadow: 0 0 20px #ffffff;
-  -ms-box-shadow: 0 0 20px #ffffff;
-  box-shadow: 0 0 20px #ffffff;
+  -ms-box-shadow: 0 0 20px white;
+  box-shadow: 0 0 20px white;
   -webkit-animation: roundX 2s linear infinite, roundY 2s linear infinite;
-  -moz-animation: roundX 2s linear infinite, roundY 2s linear infinite;
-  -ms-animation: roundX 2s linear infinite, roundY 2s linear infinite;
   animation: roundX 2s linear infinite, roundY 2s linear infinite;
 }
 @-webkit-keyframes roundBX {
@@ -126,19 +122,23 @@ body {
 @-webkit-keyframes roundY {
   0% {
     top: -100px;
-    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
   }
   25% {
     top: 0;
-    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
   }
   50% {
     top: 100px;
-    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
   }
   75% {
     top: 0px;
-    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
   }
   100% {
     top: -100px;
@@ -170,64 +170,46 @@ body {
   0% {
     opacity: 0;
     -webkit-transform: translate(0, 0) scale(2);
-    -moz-transform: translate(0, 0) scale(2);
-    -ms-transform: translate(0, 0) scale(2);
     transform: translate(0, 0) scale(2);
   }
   3% {
     opacity: 1;
     -webkit-transform: translate(0, 0) scale(1);
-    -moz-transform: translate(0, 0) scale(1);
-    -ms-transform: translate(0, 0) scale(1);
     transform: translate(0, 0) scale(1);
   }
   25% {
     opacity: 0;
     -webkit-transform: translate(200px, 0) scale(2);
-    -moz-transform: translate(200px, 0) scale(2);
-    -ms-transform: translate(200px, 0) scale(2);
     transform: translate(200px, 0) scale(2);
   }
   28% {
     opacity: 1;
     -webkit-transform: translate(200px, 0) scale(1);
-    -moz-transform: translate(200px, 0) scale(1);
-    -ms-transform: translate(200px, 0) scale(1);
     transform: translate(200px, 0) scale(1);
   }
   50% {
     opacity: 0;
     -webkit-transform: translate(0, 140px) scale(2);
-    -moz-transform: translate(0, 140px) scale(2);
-    -ms-transform: translate(0, 140px) scale(2);
     transform: translate(0, 140px) scale(2);
   }
   53% {
     opacity: 1;
     -webkit-transform: translate(0, 140px) scale(1);
-    -moz-transform: translate(0, 140px) scale(1);
-    -ms-transform: translate(0, 140px) scale(1);
     transform: translate(0, 140px) scale(1);
   }
   75% {
     opacity: 0;
     -webkit-transform: translate(200px, 140px) scale(2);
-    -moz-transform: translate(200px, 140px) scale(2);
-    -ms-transform: translate(200px, 140px) scale(2);
     transform: translate(200px, 140px) scale(2);
   }
   78% {
     opacity: 1;
     -webkit-transform: translate(200px, 140px) scale(1);
-    -moz-transform: translate(200px, 140px) scale(1);
-    -ms-transform: translate(200px, 140px) scale(1);
     transform: translate(200px, 140px) scale(1);
   }
   100% {
     opacity: 1;
     -webkit-transform: translate(200px, 140px) scale(1);
-    -moz-transform: translate(200px, 140px) scale(1);
-    -ms-transform: translate(200px, 140px) scale(1);
     transform: translate(200px, 140px) scale(1);
   }
 }

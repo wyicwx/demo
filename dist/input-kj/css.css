@@ -32,8 +32,6 @@
   bottom: -1px;
   background: #22b8eb;
   -webkit-transition: width 200ms ease, background 600ms ease;
-  -moz-transition: width 200ms ease, background 600ms ease;
-  -ms-transition: width 200ms ease, background 600ms ease;
   transition: width 200ms ease, background 600ms ease;
 }
 .input:before {

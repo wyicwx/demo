@@ -9,11 +9,12 @@
   "author": "wyicwx@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "bone": "^0.1.3",
-    "bone-act-include": "^0.1.1",
-    "bone-act-layout": "0.0.1",
-    "bone-act-less": "0.0.5",
+    "bone": "^0.3.1",
+    "bone-act-autoprefixer": "^0.1.0",
+    "bone-act-htmllayout": "^0.3.2",
+    "bone-act-include": "^0.2.0",
+    "bone-act-less": "^0.3.0",
     "bone-cli-build": "^0.1.0",
-    "bone-cli-connect": "^0.1.3"
+    "bone-cli-connect": "^0.3.0"
   }
 }
